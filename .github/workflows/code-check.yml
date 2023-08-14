@@ -1,5 +1,8 @@
 name: Code check
 
+env:
+  RESEND_API_KEY: "fake"
+
 on:
   pull_request:
     branches: ["*"]
