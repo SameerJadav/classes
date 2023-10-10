@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen items-center justify-center px-4">
       <section className="max-w-2xl">
-        <p className="text-center text-5xl font-bold">
+        <p className="text-center text-2xl font-bold md:text-5xl">
           Magic Beats Receipt Form
         </p>
         <Form />
