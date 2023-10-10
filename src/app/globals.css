@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate1 text-slate12 antialiased;
+  @apply bg-slate1 text-slate12 antialiased selection:bg-slate12 selection:text-slate1;
+  text-rendering: optimizeLegibility;
 }
