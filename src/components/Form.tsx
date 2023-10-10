@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import { cn } from "~/lib/utils";
 
 export default function Form() {
   const [formData, setFormData] = useState({
@@ -105,10 +106,13 @@ export default function Form() {
       />
       <button
         onClick={handleClick}
-        disabled={!allFieldsFilled}
-        className="col-span-2 w-full rounded-md bg-slate12 py-1.5 font-medium text-slate1 transition-colors duration-200 ease-in hover:bg-slate11 disabled:cursor-not-allowed disabled:bg-slate5 disabled:text-slate11"
+        disabled={!allFieldsFilled || status === "loading"}
+        className={cn(
+          "col-span-2 w-full rounded-md border border-transparent bg-slate12 py-1.5 font-medium text-slate1 transition-colors duration-200 ease-in hover:bg-slate11 disabled:cursor-not-allowed disabled:bg-slate5 disabled:text-slate11",
+          status === "loading" && "border-yellow9",
+        )}
       >
-        Send
+        {status === "loading" ? "Sending..." : "Send"}
       </button>
     </form>
   );
