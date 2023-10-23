@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { cn } from "~/lib/utils";
 
 export default function Form() {
@@ -117,6 +117,7 @@ export default function Form() {
       >
         {status === "loading" ? "Sending..." : "Send"}
       </button>
+      <Toaster />
     </form>
   );
 }
