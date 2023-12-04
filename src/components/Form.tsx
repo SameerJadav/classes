@@ -6,7 +6,7 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { cn } from "~/lib/utils";
 
-const CORRECT_PASSWORD = process.env.PASSWORD;
+const CORRECT_PASSWORD = "203";
 
 interface FormData {
   emailAddress: string;
@@ -42,8 +42,10 @@ export default function Form() {
     if (password === CORRECT_PASSWORD) {
       setIsAuthenticated(true);
       localStorage.setItem("isAuthenticated", "true");
+      setPassword("");
     } else {
       toast.error("Incorrect Password");
+      setPassword("");
     }
   };
 
